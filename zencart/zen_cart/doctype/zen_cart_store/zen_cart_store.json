@@ -1,0 +1,260 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "ZC.####",
+ "creation": "2022-07-05 00:28:54.931964",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "system_section",
+  "enabled",
+  "title",
+  "zencart_url",
+  "column_break_4",
+  "zencart_user",
+  "zencart_password",
+  "options",
+  "create_invoice",
+  "create_dn",
+  "order_number_prefix",
+  "column_break_10",
+  "update_stock",
+  "auto_poll",
+  "invoice_update_stock",
+  "orders_section",
+  "column_break_15",
+  "last_order_number",
+  "items_section",
+  "zen_cart_category",
+  "stock_warehouse",
+  "ship_from_warehouse",
+  "column_break_20",
+  "company",
+  "price_list",
+  "section_customers",
+  "customer_group",
+  "column_break_25",
+  "territory",
+  "section_taxes",
+  "item_tax",
+  "payment_methods",
+  "payment_method"
+ ],
+ "fields": [
+  {
+   "fieldname": "system_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "zencart_url",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Zen Cart URL"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "zencart_user",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "User Name"
+  },
+  {
+   "fieldname": "zencart_password",
+   "fieldtype": "Password",
+   "in_list_view": 1,
+   "label": "Password"
+  },
+  {
+   "fieldname": "options",
+   "fieldtype": "Section Break",
+   "label": "Options"
+  },
+  {
+   "default": "0",
+   "fieldname": "create_invoice",
+   "fieldtype": "Check",
+   "label": "Create Invoice and Payment entry"
+  },
+  {
+   "default": "0",
+   "fieldname": "create_dn",
+   "fieldtype": "Check",
+   "label": "Create Draft Delivery Note"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "update_stock",
+   "fieldtype": "Check",
+   "label": "Update Zen Cart Stock"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_poll",
+   "fieldtype": "Check",
+   "label": "Auto-poll For New Orders"
+  },
+  {
+   "fieldname": "orders_section",
+   "fieldtype": "Section Break",
+   "label": "Orders"
+  },
+  {
+   "description": "If a prefix is supplied, it wil be added in front of the Zen Cart order number to create the sales order title.",
+   "fieldname": "order_number_prefix",
+   "fieldtype": "Data",
+   "label": "Order Number Prefix"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "The last order number that was fetched from Zen Cart. The next fetch will start at the order following this one.",
+   "fieldname": "last_order_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Last Order Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "zen_cart_category",
+   "fieldtype": "Data",
+   "label": "Zen Cart Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_customers",
+   "fieldtype": "Section Break",
+   "label": "Customers"
+  },
+  {
+   "fieldname": "customer_group",
+   "fieldtype": "Link",
+   "label": "Customer Group",
+   "options": "Customer Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "label": "Territory",
+   "options": "Territory",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_taxes",
+   "fieldtype": "Section Break",
+   "label": "Taxes"
+  },
+  {
+   "description": "Maps Zen Cart item tax percentage (e.g. \"20\") to tax template",
+   "fieldname": "item_tax",
+   "fieldtype": "Table",
+   "label": "Item Tax",
+   "options": "Zen Cart Tax"
+  },
+  {
+   "fieldname": "payment_methods",
+   "fieldtype": "Section Break",
+   "label": "Payment Methods"
+  },
+  {
+   "description": "Maps Zen Cart payment modules to ERPNext methods of payment.\nCreate an entry for each Zen Cart payment module that takes payment at the point of sale and for each currency the payment module may accept.\nAny payment methods not included here will leave the invoice unpaid, which is appropriate for methods like \"Money Order\" where the payment will be entered when it arrives at some point after sale.",
+   "fieldname": "payment_method",
+   "fieldtype": "Table",
+   "label": "Payment Method",
+   "options": "Zen Cart Payment Method"
+  },
+  {
+   "description": "Optional title for the Zen Cart system.",
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "description": "The warehouse in which the Zen Cart stock resides",
+   "fieldname": "stock_warehouse",
+   "fieldtype": "Link",
+   "label": "Stock Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "description": "The warehouse from which we will ship Zen Cart orders, if different from Stock Warehouse. Most systems will leave this blank.",
+   "fieldname": "ship_from_warehouse",
+   "fieldtype": "Link",
+   "label": "Ship-From Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.create_dn == 0",
+   "fieldname": "invoice_update_stock",
+   "fieldtype": "Check",
+   "label": "Invoice Update Stock"
+  }
+ ],
+ "links": [],
+ "modified": "2022-07-10 13:07:42.782226",
+ "modified_by": "Administrator",
+ "module": "Zen Cart",
+ "name": "Zen Cart Store",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

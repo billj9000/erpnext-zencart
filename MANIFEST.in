@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include zencart *.css
+recursive-include zencart *.csv
+recursive-include zencart *.html
+recursive-include zencart *.ico
+recursive-include zencart *.js
+recursive-include zencart *.json
+recursive-include zencart *.md
+recursive-include zencart *.png
+recursive-include zencart *.py
+recursive-include zencart *.svg
+recursive-include zencart *.txt
+recursive-exclude zencart *.pyc
