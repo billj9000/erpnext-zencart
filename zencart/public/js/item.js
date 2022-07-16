@@ -57,24 +57,14 @@ function updateItem()
 
 function item_add_buttons(frm)
 {
-    // Check whether Zen Cart connector is enabled
-    // Get Zen Cart Settings doc
-    frappe.db.get_doc('Zen Cart Settings')
-        .then(doc => {
-            if( doc.enabled )
-            {
-                // Enabled - add the "Upload" buttons
-                frm.page.add_action_item(__("Update quantity in Zen Cart"), function() {
-                    return updateItemQuantity();
-                });
-       
-                frm.page.add_action_item(__("Upload to Zen Cart"), function() {
-                    return updateItem();
-                });
-        
-            }
-        })
+    // Add the Zen Cart "Upload" buttons
+    frm.page.add_action_item(__("Update quantity in Zen Cart"), function() {
+        return updateItemQuantity();
+    });
 
+    frm.page.add_action_item(__("Upload to Zen Cart"), function() {
+        return updateItem();
+    });
 }
 
 frappe.ui.form.on("Website Item", {
