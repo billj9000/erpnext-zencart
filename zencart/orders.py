@@ -218,8 +218,8 @@ def process_orders( store, orders ):
             "delivery_date": order['orderDate'],
             "taxes_and_charges": tax_template_name,
             "items": items,
-            "discount_amount": float(order['net_discount']),    # Currently not working. Need to add discount percentage too?
-            "apply_discount_on": 'Net Total',
+#            "discount_amount": float(order['net_discount']),    # Currently not working. Need to add discount percentage too?
+#            "apply_discount_on": 'Net Total',
         })
 
         # Add taxes
@@ -291,7 +291,8 @@ def process_orders( store, orders ):
                             logger.debug( 'Inserted payment entry ' + pe.name )
                             pe.submit()
                             logger.debug( 'Submitted payment entry ' + pe.name )
-                            break
+                            # uncomment to import only one order per poll
+#                            break
 
                     break
 
